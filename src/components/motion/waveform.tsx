@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { EASE_DRAW, GLOW_FADE, PEAK_STAGGER } from "@/lib/motion/tokens";
 
 export const WAVE_SWEEP = 1.2;
@@ -40,7 +40,7 @@ export function Waveform({ heights, peaks, peakColor, play, delay = 0, className
     heights.map((h, i) => {
       const peakIndex = peaks.indexOf(i);
       return (
-        <motion.div
+        <m.div
           key={i}
           className={`relative w-bar shrink-0 rounded-sm bg-neon-cyan ${glow ? "shadow-glow-cyan" : ""}`}
           style={{ height: `${h * 100}%`, originY: 0.5 }}
@@ -48,27 +48,27 @@ export function Waveform({ heights, peaks, peakColor, play, delay = 0, className
           transition={t({ delay: delay + i * step, duration: BAR_GROW, ease: EASE_DRAW })}
         >
           {!glow && peakIndex >= 0 && (
-            <motion.span
+            <m.span
               aria-hidden
               className={`absolute inset-0 rounded-sm ${peakBg}`}
               variants={{ off: { opacity: 0 }, on: { opacity: 1 } }}
               transition={t({ delay: peakAt(peakIndex), duration: GLOW_FADE })}
             />
           )}
-        </motion.div>
+        </m.div>
       );
     });
 
   return (
-    <motion.div aria-hidden className={`relative ${className ?? ""}`} initial="off" animate={state}>
-      <motion.div
+    <m.div aria-hidden className={`relative ${className ?? ""}`} initial="off" animate={state}>
+      <m.div
         className="absolute inset-0 flex items-center justify-center gap-2 overflow-hidden"
         variants={{ off: { opacity: 0 }, on: { opacity: 1 } }}
         transition={t({ delay: glowAt, duration: GLOW_FADE })}
       >
         {row(true)}
-      </motion.div>
+      </m.div>
       <div className="absolute inset-0 flex items-center justify-center gap-2 overflow-hidden">{row(false)}</div>
-    </motion.div>
+    </m.div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useReducedMotion } from "motion/react";
+import { m, useInView, useReducedMotion } from "motion/react";
 import { useRef } from "react";
 import { Waveform, waveformDuration } from "@/components/motion/waveform";
 import { Section } from "@/components/ui/section";
@@ -36,7 +36,7 @@ export function HowItWorks() {
       eyebrow="Como funciona"
       title="Você termina a live. A gente acha os picos."
     >
-      <motion.ol ref={ref} className="grid gap-6 md:grid-cols-3" initial="off" animate={state}>
+      <m.ol ref={ref} className="grid gap-6 md:grid-cols-3" initial="off" animate={state}>
         {steps.map((step, i) => (
           <li key={step.title} className="flex flex-col gap-4 rounded-md border border-line-700 bg-surface-800 p-6">
             <p className="font-mono text-timecode text-neon-cyan">0{i + 1}</p>
@@ -58,7 +58,7 @@ export function HowItWorks() {
                     {HEIGHTS.map((_, bar) => (
                       <span key={bar} className="flex w-bar shrink-0 justify-center">
                         {PEAKS.includes(bar) && (
-                          <motion.span
+                          <m.span
                             className="h-4 w-bar rounded-sm bg-sunset"
                             variants={{ off: { opacity: 0, scaleY: 0 }, on: { opacity: 1, scaleY: 1 } }}
                             transition={t({ delay: MARKERS_AT + PEAKS.indexOf(bar) * PEAK_STAGGER, duration: GLOW_FADE })}
@@ -72,7 +72,7 @@ export function HowItWorks() {
               {i === 2 && (
                 <ul aria-label="Exemplos de cortes" className="grid grid-cols-3 gap-2">
                   {CLIPS.map((clip, c) => (
-                    <motion.li
+                    <m.li
                       key={clip.time}
                       className="flex aspect-clip flex-col justify-between rounded-sm border border-line-700 bg-bg-900 p-2"
                       variants={{ off: { opacity: 0, y: 16 }, on: { opacity: 1, y: 0 } }}
@@ -87,14 +87,14 @@ export function HowItWorks() {
                         )}
                         <span className="text-small text-ink">{clip.caption}</span>
                       </span>
-                    </motion.li>
+                    </m.li>
                   ))}
                 </ul>
               )}
             </div>
           </li>
         ))}
-      </motion.ol>
+      </m.ol>
       <p className="sr-only">Marcadores de clipe em {MARKER_TIMES.join(", ")}.</p>
     </Section>
   );

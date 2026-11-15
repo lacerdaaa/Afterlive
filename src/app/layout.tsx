@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Manrope, Unbounded } from "next/font/google";
+import { MotionProvider } from "@/components/motion/motion-provider";
 import { color } from "@/lib/design/tokens";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
@@ -26,7 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="pt-BR" className={`${unbounded.variable} ${manrope.variable} ${mono.variable}`}>
       <body>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
         <Analytics />
       </body>
     </html>

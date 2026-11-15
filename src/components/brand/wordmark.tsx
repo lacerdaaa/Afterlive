@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { DRAW_DURATION, EASE_DRAW, GLOW_FADE } from "@/lib/motion/tokens";
 import { WORDMARK, WORDMARK_VIEWBOX } from "./wordmark-paths";
 
@@ -22,7 +22,7 @@ export function Wordmark({ delay = 0, className }: Props) {
 
   const paths = (animated: boolean) =>
     WORDMARK.strokes.map((s, i) => (
-      <motion.path
+      <m.path
         key={i}
         d={s.d}
         transform={`translate(${s.x} 0)`}
@@ -43,7 +43,7 @@ export function Wordmark({ delay = 0, className }: Props) {
   return (
     <svg viewBox={WORDMARK_VIEWBOX} role="img" aria-label="Afterlive" className={`overflow-visible text-neon-pink ${className ?? ""}`}>
       {/* Glow layer: static filter, only its opacity animates. */}
-      <motion.g
+      <m.g
         className="glow-filter-pink"
         aria-hidden
         initial={{ opacity: 0 }}
@@ -51,7 +51,7 @@ export function Wordmark({ delay = 0, className }: Props) {
         transition={reduce ? { duration: 0 } : { delay: delay + DRAW_DURATION + per * 0.6, duration: GLOW_FADE }}
       >
         {paths(false)}
-      </motion.g>
+      </m.g>
       <g>{paths(true)}</g>
     </svg>
   );
