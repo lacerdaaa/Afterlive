@@ -28,23 +28,23 @@ export const problem = {
 
 export const steps = [
   {
-    title: "Conecta a conta",
-    body: "Liga sua Twitch, Kick ou YouTube uma vez. Quando a live acaba, a VOD entra na fila sozinha.",
+    title: "Conecta e esquece",
+    body: "Liga Twitch, Kick ou YouTube uma vez. Acabou a live, a VOD já tá na fila. Sem upload, sem link, sem nada.",
   },
   {
-    title: "A IA acha os picos",
-    body: "Ela cruza chat, áudio e o HUD do jogo pra marcar os momentos que a sua comunidade mais reagiu.",
+    title: "A IA caça os picos",
+    body: "Ela cruza o chat, o seu grito e o HUD do jogo pra achar onde a comunidade surtou.",
   },
   {
-    title: "Cortes prontos",
-    body: "Você recebe os cortes em 9:16, reenquadrados e com legenda em PT-BR. É revisar e postar.",
+    title: "Corte pronto pra postar",
+    body: "9:16, reenquadrado e com legenda em PT-BR. Você só escolhe quais sobem.",
   },
 ] as const;
 
 export const signals = {
   chat: {
     title: "Chat",
-    body: "Velocidade e intensidade do chat: spike de mensagem, emote repetido, KKKKK em massa. Se o chat explodiu, alguma coisa aconteceu.",
+    body: "Spike de mensagem, emote em massa, KKKKK em caixa alta. Quando o chat surta, alguma coisa aconteceu.",
     messages: [
       { time: "01:24:31", text: "KKKKKKKKKKKKK" },
       { time: "01:24:32", text: "NÃO ACREDITO" },
@@ -54,13 +54,13 @@ export const signals = {
   },
   audio: {
     title: "Áudio",
-    body: "Grito, risada, aquele silêncio antes do caos. A IA ouve sua reação, não só o som do jogo.",
+    body: "Grito, risada, aquele silêncio antes do caos. A IA ouve a sua reação, não só o barulho do jogo.",
   },
   hud: {
     title: "HUD do jogo",
-    body: "Estrelas de procurado subindo, perseguição, tela de derrota. Visão computacional lê o que está na tela, onde não existe kill feed.",
+    body: "Estrela de procurado subindo, perseguição, tela de derrota. Visão computacional lê a tela onde não existe kill feed.",
   },
-  together: "Quando os três batem juntos, é corte.",
+  together: "Os três batendo junto? Isso é corte.",
 };
 
 export const plans = [
@@ -68,7 +68,7 @@ export const plans = [
     name: "Free",
     price: "R$ 0",
     period: "pra sempre",
-    pitch: "Pra testar na sua próxima live.",
+    pitch: "Pra sentir o gosto na próxima live.",
     features: ["3 cortes por live", "Legenda em PT-BR", "720p com marca d'água"],
     featured: false,
   },
@@ -76,7 +76,7 @@ export const plans = [
     name: "Pro",
     price: "R$ 39",
     period: "/mês",
-    pitch: "Pra quem faz live toda semana.",
+    pitch: "Pra quem tá ao vivo toda semana.",
     features: ["30 cortes por live", "1080p sem marca d'água", "Legenda editável", "Twitch, Kick e YouTube"],
     featured: true,
   },
@@ -84,7 +84,7 @@ export const plans = [
     name: "Creator",
     price: "R$ 99",
     period: "/mês",
-    pitch: "Pra quem vive de corte.",
+    pitch: "Pra quem vive de corte e tem canal de cortes.",
     features: ["Cortes ilimitados", "Várias contas e canais", "Fila prioritária", "Exporta pra editor"],
     featured: false,
   },
