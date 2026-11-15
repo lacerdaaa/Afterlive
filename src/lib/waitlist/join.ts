@@ -5,7 +5,7 @@ import { parseWaitlistInput } from "./schema";
 export type JoinState =
   | { status: "idle" }
   | { status: "success" }
-  | { status: "error"; message: string };
+  | { status: "error"; message: string; email?: string };
 
 export type JoinDeps = {
   repository: WaitlistRepository;

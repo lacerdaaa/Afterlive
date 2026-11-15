@@ -38,6 +38,7 @@ export function WaitlistForm({ source }: { source: "hero" | "final" }) {
               autoComplete="email"
               placeholder="seu@email.com"
               required
+              defaultValue={state.status === "error" ? state.email : undefined}
               aria-invalid={error ? true : undefined}
               aria-describedby={`${id}-msg ${id}-note`}
               className="min-w-0 flex-1 rounded-sm border border-ink-muted bg-surface-800 px-4 py-4 text-body text-ink placeholder:text-ink-muted aria-invalid:border-danger"
