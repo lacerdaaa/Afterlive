@@ -20,7 +20,7 @@ export function NeonMark({ children, color = "cyan" }: { children: ReactNode; co
         play={inView}
         duration={MARK_DRAW}
         glow={color}
-        className={`pointer-events-none absolute inset-x-0 top-full h-4 w-full ${color === "cyan" ? "text-neon-cyan" : "text-neon-pink"}`}
+        className={`pointer-events-none absolute inset-x-0 -bottom-1 h-2 w-full ${color === "cyan" ? "text-neon-cyan" : "text-neon-pink"}`}
       />
     </span>
   );

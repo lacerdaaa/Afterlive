@@ -1,3 +1,4 @@
+import { Demo } from "@/components/sections/demo";
 import { Faq } from "@/components/sections/faq";
 import { FinalCta } from "@/components/sections/final-cta";
 import { Footer } from "@/components/sections/footer";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <main className="flex flex-col gap-16 pb-16">
         <Hero />
+        <Demo />
         <Problem />
         <HowItWorks />
         <Signals />
