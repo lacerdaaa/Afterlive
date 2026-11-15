@@ -2,14 +2,28 @@
 
 // TODO(dados-reais): estimativas da equipe. Trocar por números medidos com os primeiros streamers.
 export const problem = {
-  equation: [
-    { value: "6h", label: "de live" },
-    { value: "20", label: "momentos que viram corte" },
-    { value: "25 min", label: "por corte: achar, cortar, reenquadrar e legendar" },
-  ],
-  result: { value: "8h+", label: "de edição. Mais que a própria live." },
+  manual: {
+    label: "Na mão",
+    tasks: [
+      { task: "Reassistir a VOD caçando momento", time: "1h40" },
+      { task: "Cortar 20 trechos", time: "1h40" },
+      { task: "Reenquadrar pra 9:16", time: "2h" },
+      { task: "Legendar palavra por palavra", time: "3h" },
+    ],
+    totalMinutes: 500,
+    verdict: "Mais tempo editando do que fazendo live.",
+  },
+  afterlive: {
+    label: "Com o Afterlive",
+    timeline: [
+      { time: "02:14", text: "Você fecha a live e vai dormir." },
+      { time: "02:15", text: "A VOD entra na fila sozinha." },
+      { time: "08:00", text: "20 cortes legendados te esperando." },
+    ],
+    verdict: "Seu trabalho: escolher quais postar.",
+  },
   footnote:
-    "Estimativa: 20 cortes por live de 6h e uns 25 min de edição manual por corte. Vamos trocar por dados reais dos primeiros streamers.",
+    "Estimativa pra uma live de 6h com 20 cortes, uns 25 min de edição manual por corte. Vamos trocar por dados reais dos primeiros streamers.",
 };
 
 export const steps = [
@@ -104,3 +118,35 @@ export const faq = [
     a: "Em ondas, começando por quem está na lista. Entra com seu e-mail e a gente avisa quando for a sua vez.",
   },
 ] as const;
+
+// Product demo: one clip "playing" with karaoke captions while the chat reacts.
+export const demo = {
+  channel: "@seucanal",
+  clip: { index: 1, total: 20, length: "0:38", at: "01:24:31" },
+  vod: "06:12:48",
+  /** Caption words, shown three at a time, one highlighted per beat. */
+  words: ["NÃO", "ACREDITO", "QUE", "ELE", "PULOU", "DO", "VIADUTO", "COM", "CINCO", "ESTRELAS", "KKKKKK"],
+  /** Star k lights at beat starsAt[k] (the HUD reading the wanted level). */
+  starsAt: [2, 4, 6, 7, 8],
+  calmChat: [
+    { user: "nanda", text: "boa noite chat" },
+    { user: "kaique", text: "qual o plano hoje" },
+    { user: "gui_tv", text: "vai roubar o banco?" },
+  ],
+  /** Message `at` = caption beat it lands on. */
+  chat: [
+    { at: 0, user: "lari.exe", text: "NÃO" },
+    { at: 2, user: "mi7", text: "ele vai pular??" },
+    { at: 4, user: "bruno_fps", text: "KKKKKKKKKKKK" },
+    { at: 5, user: "zezinho", text: "CLIPA ISSO" },
+    { at: 6, user: "kaique", text: "o mlk voou" },
+    { at: 7, user: "lari.exe", text: "MDS" },
+    { at: 8, user: "gui_tv", text: "5 ESTRELAS KKKK" },
+    { at: 9, user: "nanda", text: "clipa clipa clipa" },
+    { at: 10, user: "mi7", text: "KKKKKKKKKKKKKKK" },
+  ],
+  rate: { calm: 38, peak: 412 },
+  /** Where the 20 clips sit along the VOD (percent), the first one is this clip. */
+  markers: [23, 4, 9, 15, 31, 36, 41, 47, 52, 55, 61, 64, 70, 74, 79, 83, 88, 91, 95, 98],
+  disclaimer: "Simulação. O Afterlive ainda está sendo construído e esse corte é ilustrativo.",
+};
