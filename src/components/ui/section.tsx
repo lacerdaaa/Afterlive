@@ -14,7 +14,7 @@ export function Section({ id, timecode, eyebrow, title, intro, children }: Props
   const headingId = `${id}-title`;
   return (
     <section id={id} aria-labelledby={headingId} className="mx-auto w-full max-w-content scroll-mt-10 px-6">
-      <header className="flex max-w-prose flex-col gap-4">
+      <header className="flex max-w-copy flex-col gap-4">
         <p className="font-mono text-timecode text-ink-muted">
           <span className="text-neon-cyan">{timecode}</span> · {eyebrow}
         </p>

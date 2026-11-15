@@ -23,7 +23,7 @@ export function WaitlistForm({ source }: { source: "hero" | "final" }) {
   }, [state, source]);
 
   return (
-    <div className="w-full max-w-prose">
+    <div className="w-full max-w-copy">
       {state.status !== "success" && (
         <form action={action} noValidate className="flex flex-col gap-2">
           <label htmlFor={`${id}-email`} className="sr-only">

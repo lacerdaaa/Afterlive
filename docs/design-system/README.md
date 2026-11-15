@@ -15,7 +15,7 @@ Neoncut é uma ferramenta de clipping com IA para streamers de GTA 6: ela pega a
 - **Cores com papéis fixos.** `neon-pink` é a marca e o CTA primário (no máximo um por dobra). `neon-cyan` é a waveform e o foco. `sunset` só marca clipe e "viral". `danger` só aparece em erro. Texto sobre pink é `on-pink`, nunca branco.
 - **Tipografia.** `display` (Unbounded, larga e de pôster) só em títulos de `heading` pra cima. Corpo em `sans` (Manrope). Timecodes, contadores e durações em `mono` (JetBrains Mono, estilo `timecode`), sempre no formato `01:24:37`. As três famílias vêm do Google Fonts.
 - **Grid e ritmo.** Gutter de `space-6`. Entre blocos de uma seção, `space-10`. Entre seções, `space-16`.
-- **Layout.** Conteúdo até `container-content` (1120px); parágrafos, headline e form até `container-prose` (640px). Barras da waveform com `bar-width` (12px). Cards de corte vertical na proporção `aspect-clip` (9:16).
+- **Layout.** Conteúdo até `container-content` (1120px); parágrafos, headline e form até `container-copy` (640px). Barras da waveform com `bar-width` (12px). Cards de corte vertical na proporção `aspect-clip` (9:16).
 - **Formas.** Cards e botões com `radius-md`. As barras da waveform têm 12px de largura com `radius-sm`, o que as deixa como pílulas. Chips com `radius-pill`.
 - **Contraste.** `ink` e `ink-muted` passam de 4.5:1 sobre `bg-900` e `surface-800`. `neon-pink` como texto passa sobre `bg-900`; sobre `surface-800`, use pink só a partir de 18px.
 

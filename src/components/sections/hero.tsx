@@ -38,7 +38,7 @@ export function Hero() {
 
         <div className="relative mx-auto flex w-full max-w-content flex-col items-center px-10 text-center md:px-6">
           <Chip>Feito pras lives de GTA 6</Chip>
-          <Wordmark delay={LOGO_DELAY} className="mt-6 w-full max-w-prose md:mt-10" />
+          <Wordmark delay={LOGO_DELAY} className="mt-6 w-full max-w-copy md:mt-10" />
         </div>
 
         <Waveform
@@ -52,10 +52,10 @@ export function Hero() {
       </div>
 
       <div className="mx-auto flex w-full max-w-content flex-col items-center px-6 text-center">
-        <h1 id="hero-title" className="mt-6 max-w-prose font-display text-heading text-balance md:mt-10 md:text-display-lg">
+        <h1 id="hero-title" className="mt-6 max-w-copy font-display text-heading text-balance md:mt-10 md:text-display-lg">
           Sua live de 6h vira 20 cortes enquanto você dorme.
         </h1>
-        <p className="mt-4 max-w-prose text-body-lg text-pretty text-ink-muted md:mt-6">
+        <p className="mt-4 max-w-copy text-body-lg text-pretty text-ink-muted md:mt-6">
           Você fecha a live e vai dormir. A IA assiste tudo, lê o chat e acha onde você gritou. De manhã tem corte
           9:16 legendado em PT-BR esperando, pronto pro TikTok, Shorts e Reels.
         </p>

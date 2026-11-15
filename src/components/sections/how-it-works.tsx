@@ -2,6 +2,7 @@
 
 import { m, useInView, useReducedMotion } from "motion/react";
 import { useRef } from "react";
+import { MARK_DRAW, NeonMark } from "@/components/motion/neon-mark";
 import { Waveform, waveformDuration } from "@/components/motion/waveform";
 import { Section } from "@/components/ui/section";
 import { steps } from "@/content/landing";
@@ -18,8 +19,9 @@ const CLIPS = [
   { time: "04:47:55", length: "0:41", caption: "o chat previu tudo", viral: false },
 ];
 
-// Sequence inside this section: waveform → clip markers → vertical cards.
-const MARKERS_AT = waveformDuration(PEAKS.length);
+// Sequence inside this section: title underline → waveform → clip markers → vertical cards.
+const WAVE_AT = MARK_DRAW + 0.3;
+const MARKERS_AT = WAVE_AT + waveformDuration(PEAKS.length);
 const CARDS_AT = MARKERS_AT + PEAKS.length * PEAK_STAGGER + GLOW_FADE;
 
 export function HowItWorks() {
@@ -34,7 +36,11 @@ export function HowItWorks() {
       id="como-funciona"
       timecode="00:01:12"
       eyebrow="Como funciona"
-      title="Você termina a live. A gente acha os picos."
+      title={
+        <>
+          Você fecha a live. A gente <NeonMark>garimpa</NeonMark>.
+        </>
+      }
     >
       <m.ol ref={ref} className="grid gap-6 md:grid-cols-3" initial="off" animate={state}>
         {steps.map((step, i) => (
@@ -51,6 +57,7 @@ export function HowItWorks() {
                     peaks={PEAKS}
                     peakColor="pink"
                     play={inView}
+                    delay={WAVE_AT}
                     className="h-[calc(var(--spacing-10)*2)]"
                   />
                   {/* Timeline: same slots as the bars so markers sit under their peak. */}

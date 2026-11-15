@@ -107,7 +107,7 @@ export function Problem() {
           </div>
         </m.div>
       </div>
-      <p className="mt-4 max-w-prose text-small text-ink-muted">{problem.footnote}</p>
+      <p className="mt-4 max-w-copy text-small text-ink-muted">{problem.footnote}</p>
     </Section>
   );
 }

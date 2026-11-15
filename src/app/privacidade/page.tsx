@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 // TODO(juridico): revisar com advogado antes de coletar dados além do e-mail.
 export default function PrivacyPage() {
   return (
-    <main className="mx-auto flex w-full max-w-prose flex-col gap-6 px-6 py-16">
+    <main className="mx-auto flex w-full max-w-copy flex-col gap-6 px-6 py-16">
       <Link href="/" className="text-small text-ink-muted underline underline-offset-4 hover:text-ink">
         Voltar
       </Link>

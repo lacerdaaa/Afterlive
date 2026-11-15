@@ -14,7 +14,7 @@ export function color(name: ColorName): string {
   return token.value;
 }
 
-export function layoutPx(name: "bar-width" | "container-content" | "container-prose"): number {
+export function layoutPx(name: "bar-width" | "container-content" | "container-copy"): number {
   const token = tokens.layout.tokens.find((t) => t.name === name);
   if (!token) throw new Error(`Unknown layout token "${name}"`);
   return Number.parseFloat(token.value);
