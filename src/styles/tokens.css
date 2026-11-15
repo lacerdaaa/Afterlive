@@ -1,0 +1,78 @@
+/* Neoncut — generated from docs/design-system/tokens.json. Do not edit. */
+
+@theme {
+  --color-*: initial;
+  --spacing-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+  --font-*: initial;
+  --text-*: initial;
+  --container-*: initial;
+  --aspect-*: initial;
+
+  /* color */
+  --color-bg-900: #0B0712;
+  --color-surface-800: #161022;
+  --color-line-700: #2D2440;
+  --color-ink: #F4EEF8;
+  --color-ink-muted: #A99EBB;
+  --color-neon-pink: #FF3EA5;
+  --color-on-pink: #1A0610;
+  --color-neon-cyan: #22E4F2;
+  --color-sunset: #FFB347;
+  --color-danger: #FF6B6B;
+
+  /* spacing: space-N → p-N, gap-N, … */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-10: 40px;
+  --spacing-16: 64px;
+
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+
+  /* type */
+  --font-display: var(--ff-unbounded), "Arial Black", system-ui, sans-serif;
+  --font-sans: var(--ff-manrope), system-ui, sans-serif;
+  --font-mono: var(--ff-jetbrains-mono), ui-monospace, monospace;
+  --text-display-xl: 72px;
+  --text-display-xl--line-height: 72px;
+  --text-display-xl--font-weight: 700;
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 52px;
+  --text-display-lg--font-weight: 700;
+  --text-heading: 28px;
+  --text-heading--line-height: 34px;
+  --text-heading--font-weight: 600;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-lg--font-weight: 500;
+  --text-body: 16px;
+  --text-body--line-height: 24px;
+  --text-body--font-weight: 400;
+  --text-small: 14px;
+  --text-small--line-height: 20px;
+  --text-small--font-weight: 500;
+  --text-timecode: 13px;
+  --text-timecode--line-height: 20px;
+  --text-timecode--font-weight: 500;
+
+  /* shadow */
+  --shadow-glow-pink: 0 0 8px rgba(255, 62, 165, 0.65), 0 0 24px rgba(255, 62, 165, 0.35);
+  --shadow-glow-cyan: 0 0 8px rgba(34, 228, 242, 0.6), 0 0 20px rgba(34, 228, 242, 0.3);
+
+  /* layout */
+  --container-content: 1120px;
+  --container-prose: 640px;
+  --aspect-clip: 0.5625;
+}
+
+:root {
+  --filter-glow-pink: drop-shadow(0 0 8px rgba(255, 62, 165, 0.65)) drop-shadow(0 0 24px rgba(255, 62, 165, 0.35));
+  --filter-glow-cyan: drop-shadow(0 0 8px rgba(34, 228, 242, 0.6)) drop-shadow(0 0 20px rgba(34, 228, 242, 0.3));
+  --layout-bar-width: 12px;
+}

@@ -9,9 +9,14 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "tokens": "node --experimental-strip-types --no-warnings scripts/build-tokens.ts",
+    "prebuild": "pnpm tokens"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "lucide-react": "^1.73.0",
+    "motion": "^14.14.0",
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
