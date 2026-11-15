@@ -42,3 +42,4 @@ next-env.d.ts
 
 # local waitlist storage (dev)
 /.data
+!.env.example

@@ -1,1 +1,55 @@
 @import "tailwindcss";
+@import "../styles/tokens.css";
+
+/* Zero is not a design decision; it keeps inset-0, m-0, … available after the spacing reset. */
+@theme {
+  --spacing-0: 0px;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: var(--color-bg-900);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--color-bg-900);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Focus ring: neon-cyan, always visible for keyboard users. */
+  :focus-visible {
+    outline: 2px solid var(--color-neon-cyan);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-neon-pink);
+    color: var(--color-on-pink);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+/* Glow for SVG strokes: box-shadow doesn't follow a path, drop-shadow does. */
+@utility glow-filter-pink {
+  filter: var(--filter-glow-pink);
+}
+
+@utility glow-filter-cyan {
+  filter: var(--filter-glow-cyan);
+}
+
+@utility w-bar {
+  width: var(--layout-bar-width);
+}
