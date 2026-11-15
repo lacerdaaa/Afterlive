@@ -1,3 +1,9 @@
+import { Hero } from "@/components/sections/hero";
+
 export default function Home() {
-  return <main />;
+  return (
+    <main className="flex flex-col gap-16 pb-16">
+      <Hero />
+    </main>
+  );
 }
