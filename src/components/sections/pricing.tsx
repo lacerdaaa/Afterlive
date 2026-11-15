@@ -1,17 +1,24 @@
 import { Check } from "lucide-react";
+import { DrawFrame } from "@/components/motion/draw-frame";
+import { MARK_DRAW, NeonMark } from "@/components/motion/neon-mark";
 import { Chip } from "@/components/ui/chip";
 import { Section } from "@/components/ui/section";
 import { plans, pricingNote } from "@/content/landing";
 
 export function Pricing() {
   return (
-    <Section id="planos" timecode="00:04:20" eyebrow="Planos" title="Começa grátis. Paga quando virar rotina.">
+    <Section id="planos" timecode="00:04:20" eyebrow="Planos" title={
+        <>
+          Grátis pra testar. Pago quando virar <NeonMark color="pink">vício</NeonMark>.
+        </>
+      }>
       <ul className="grid gap-6 md:grid-cols-3">
         {plans.map((plan) => (
           <li
             key={plan.name}
-            className={`flex flex-col gap-4 rounded-md border bg-surface-800 p-6 ${plan.featured ? "border-neon-pink" : "border-line-700"}`}
+            className="relative flex flex-col gap-4 rounded-md border border-line-700 bg-surface-800 p-6"
           >
+            {plan.featured && <DrawFrame delay={MARK_DRAW + 0.2} />}
             <div className="flex items-center justify-between gap-2">
               <h3 className="text-body-lg font-bold text-ink">{plan.name}</h3>
               <Chip>em breve</Chip>
